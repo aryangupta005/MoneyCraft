@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Dhaniverse</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            overflow: hidden;
+            background-color: #000;
+        }
+        canvas { 
+            display: block; 
+            image-rendering: auto;
+        }
+        #loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+        #join-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+        }
+        #game-container {
+            display: none;
+        }
+        #hud-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Allow clicking through to the game */
+            z-index: 900; /* Below join-screen but above game */
+            display: none; /* Initially hidden, will be shown when game starts */
+        }
+        #banking-ui-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1001; /* Above everything else when active */
+            pointer-events: none; /* By default, allow clicks to pass through */
+        }
+        /* When banking UI is active, we want it to receive pointer events */
+        #banking-ui-container.active {
+            pointer-events: auto;
+        }
+        #stock-market-ui-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1001; /* Same as banking-ui-container, we don't want them both active at once */
+            pointer-events: none; /* By default, allow clicks to pass through */
+        }
+        /* When stock market UI is active, we want it to receive pointer events */
+        #stock-market-ui-container.active {
+            pointer-events: auto;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.88.2/dist/phaser.min.js"></script>
+</head>
+<body>
+    <div id="loading">Loading Assets...</div>
+    <div id="join-screen"></div>
+    <div id="game-container"></div>
+    <div id="hud-container"></div>
+    <div id="banking-ui-container"></div>
+    <div id="stock-market-ui-container"></div>
+    <script type="module" src="/src/main.ts"></script>
+    <script>
+        // Remove loading div once game is visible
+        window.onload = function() {
+            setTimeout(function() {
+                const loading = document.getElementById('loading');
+                if (loading) loading.style.display = 'none';
+            }, 1000);
+        };
+        
+        // Toggle the banking UI container's active class when the banking UI opens/closes
+        window.addEventListener('openBankingUI', function() {
+            document.getElementById('banking-ui-container').classList.add('active');
+            // Make sure stock market UI is not active
+            document.getElementById('stock-market-ui-container').classList.remove('active');
+        });
+        
+        // Only remove the active class when explicitly closing the UI
+        window.addEventListener('updatePlayerRupees', function(event) {
+            // Only remove active class if explicitly closing the UI
+            if (event.detail && event.detail.closeUI) {
+                document.getElementById('banking-ui-container').classList.remove('active');
+            }
+        });
+
+        // Toggle the stock market UI container's active class when the UI opens/closes
+        window.addEventListener('openStockMarketUI', function() {
+            document.getElementById('stock-market-ui-container').classList.add('active');
+            // Make sure banking UI is not active
+            document.getElementById('banking-ui-container').classList.remove('active');
+        });
+        
+        window.addEventListener('closeStockMarketUI', function() {
+            document.getElementById('stock-market-ui-container').classList.remove('active');
+        });
+    </script>
+</body>
+</html>

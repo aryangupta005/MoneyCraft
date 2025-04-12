@@ -1,0 +1,35 @@
+.game-hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Allow clicking through to the game */
+  z-index: 1000;
+  font-family: 'Pixeloid', Arial, sans-serif;
+}
+
+.rupee-counter {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 8px 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  color: #FFD700; /* Gold color for rupees */
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.rupee-symbol {
+  margin-right: 6px;
+  font-size: 28px;
+}
+
+/* Make specific HUD elements clickable if needed */
+.clickable {
+  pointer-events: auto;
+}
