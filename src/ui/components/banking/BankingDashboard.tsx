@@ -33,7 +33,7 @@ const BankingDashboard: React.FC<BankingDashboardProps> = ({
   useEffect(() => {
     try {
       // Load bank account data
-      const bankData = localStorage.getItem('dhaniverse_bank_account');
+      const bankData = localStorage.getItem('MoneyCraft_bank_account');
       if (bankData) {
         const parsedData = JSON.parse(bankData);
         setBankBalance(parsedData.balance || 0);
