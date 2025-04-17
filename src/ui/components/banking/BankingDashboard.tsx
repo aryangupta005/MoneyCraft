@@ -40,7 +40,7 @@ const BankingDashboard: React.FC<BankingDashboardProps> = ({
       }
       
       // Load fixed deposits data
-      const fdData = localStorage.getItem('dhaniverse_fixed_deposits');
+      const fdData = localStorage.getItem('MoneyCraft_fixed_deposits');
       if (fdData) {
         let parsedFDs = JSON.parse(fdData);
         
@@ -70,12 +70,12 @@ const BankingDashboard: React.FC<BankingDashboardProps> = ({
   // Save bank data to local storage
   const saveBankData = () => {
     try {
-      localStorage.setItem('dhaniverse_bank_account', JSON.stringify({ 
+      localStorage.setItem('MoneyCraft_bank_account', JSON.stringify({ 
         balance: bankBalance,
         created: true 
       }));
       
-      localStorage.setItem('dhaniverse_fixed_deposits', JSON.stringify(fixedDeposits));
+      localStorage.setItem('MoneyCraft_fixed_deposits', JSON.stringify(fixedDeposits));
     } catch (error) {
       console.error("Error saving bank data:", error);
     }
@@ -217,7 +217,7 @@ const BankingDashboard: React.FC<BankingDashboardProps> = ({
       <div className="relative w-4/5 max-w-5xl max-h-[90vh] bg-gray-900 text-white rounded-lg shadow-xl border border-yellow-600 overflow-auto">
         {/* Header */}
         <div className="p-4 bg-gradient-to-r from-yellow-800 to-yellow-600 flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Royal Bank of Dhaniverse</h1>
+          <h1 className="text-2xl font-bold">Royal Bank of MoneyCraft</h1>
           
           {/* Player's rupees and account balance */}
           <div className="flex items-center space-x-4">
