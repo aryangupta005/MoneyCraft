@@ -1,5 +1,5 @@
 # 🌍 Money Craft — Gamified Financial Management App 💸🎮
-![moneycraft readme](https://github.com/user-attachments/assets/a734781e-3fb3-4339-a5de-d21b3143685f)
+
 
 > "We're not just making financial education fun — we're making it *relevant* to young India's unique challenges."
 
