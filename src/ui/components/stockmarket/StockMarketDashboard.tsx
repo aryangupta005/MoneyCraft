@@ -101,7 +101,7 @@ const StockMarketDashboard: React.FC<StockMarketDashboardProps> = ({
   // Load portfolio data from localStorage on initial render
   useEffect(() => {
     try {
-      const savedPortfolio = localStorage.getItem('dhaniverse_stock_portfolio');
+      const savedPortfolio = localStorage.getItem('MoneyCraft_stock_portfolio');
       if (savedPortfolio) {
         setPortfolio(JSON.parse(savedPortfolio));
       }
@@ -113,7 +113,7 @@ const StockMarketDashboard: React.FC<StockMarketDashboardProps> = ({
   // Save portfolio to localStorage when it changes
   useEffect(() => {
     try {
-      localStorage.setItem('dhaniverse_stock_portfolio', JSON.stringify(portfolio));
+      localStorage.setItem('MoneyCraft_stock_portfolio', JSON.stringify(portfolio));
     } catch (error) {
       console.error("Error saving stock portfolio:", error);
     }
@@ -435,7 +435,7 @@ const StockMarketDashboard: React.FC<StockMarketDashboardProps> = ({
       <div className="relative w-4/5 max-w-5xl max-h-[90vh] bg-gray-900 text-white rounded-lg shadow-xl border border-blue-600 overflow-auto">
         {/* Header */}
         <div className="p-4 bg-gradient-to-r from-blue-800 to-blue-600 flex justify-between items-center">
-          <h1 className="text-2xl font-bold">Dhaniverse Stock Exchange</h1>
+          <h1 className="text-2xl font-bold">MoneyCraft Stock Exchange</h1>
           
           {/* Player's rupees */}
           <div className="flex items-center space-x-4">
