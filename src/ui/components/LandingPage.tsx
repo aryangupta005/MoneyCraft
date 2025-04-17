@@ -24,7 +24,7 @@ const LandingPage: React.FC = () => {
   return (
     <div className="landing-container">
       <div className="join-container pixeloid">
-        <h2>Join Dhaniverse</h2>
+        <h2>Join MoneyCraft</h2>
         <input 
           type="text" 
           value={username}
