@@ -1,5 +1,5 @@
 import { Scene, Types, GameObjects } from 'phaser';
-import { Player } from '../entities/Player.ts';
+import { Player } from '../entities/player.ts';
 import { CollisionManager } from '../systems/CollisionManager.ts';
 import { MapManager } from '../systems/MapManager.ts';
 import { WebSocketManager } from '../systems/WebSocketManager.ts';

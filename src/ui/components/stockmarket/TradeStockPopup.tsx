@@ -1,28 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
-interface Stock {
-  id: string;
-  name: string;
-  currentPrice: number;
-  priceHistory: number[];
-  debtEquityRatio: number;
-  businessGrowth: number;
-  news: string[];
-  marketCap: number;
-  peRatio: number;
-  eps: number;
-  industryAvgPE: number;
-  outstandingShares: number;
-  volatility: number;
-  lastUpdate: number;
-}
-
-interface StockHolding {
-  stockId: string;
-  quantity: number;
-  averagePurchasePrice: number;
-  totalInvestment: number;
-}
+import type { Stock, StockHolding } from './stockTypes.ts';
 
 interface TradeStockPopupProps {
   stock: Stock;

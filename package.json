@@ -3,11 +3,15 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
+    "start": "vite",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "server": "deno run --allow-net server/server.ts"
+    "server": "deno run --allow-net server/index.ts"
   },
   "devDependencies": {
     "typescript": "~5.7.2",

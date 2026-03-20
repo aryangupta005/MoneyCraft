@@ -1,5 +1,5 @@
 import { GameObjects } from 'phaser';
-import { Player } from '../entities/Player.ts';
+import { Player } from '../entities/player.ts';
 import { Constants } from '../utils/Constants.ts';
 import { MainGameScene } from '../scenes/MainScene.ts';
 

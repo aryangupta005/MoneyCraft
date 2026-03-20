@@ -1,21 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-
-interface Stock {
-  id: string;
-  name: string;
-  currentPrice: number;
-  priceHistory: number[];
-  debtEquityRatio: number;
-  businessGrowth: number;
-  news: string[];
-  marketCap: number;
-  peRatio: number;
-  eps: number;
-  industryAvgPE: number;
-  outstandingShares: number;
-  volatility: number;
-  lastUpdate: number;
-}
+import type { Stock } from './stockTypes.ts';
 
 interface StockGraphProps {
   stock: Stock;

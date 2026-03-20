@@ -4,7 +4,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('public/UI/joingingscreen.jpg') no-repeat center center / cover ;
+  background-color: #2d1b4e;
+  background-image: url('/UI/joingingscreen.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,7 +21,7 @@
   padding: 2rem;
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(255 ,255 ,255 , 0.2);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
   animation: fadeIn 0.5s ease-out;
 }
 

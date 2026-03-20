@@ -4,53 +4,13 @@ import StockGraph from './StockGraph.tsx';
 import NewsPopup from './NewsPopup.tsx';
 import HelpPanel from './HelpPanel.tsx';
 import TradeStockPopup from './TradeStockPopup.tsx';
-
-interface Stock {
-  id: string;
-  name: string;
-  currentPrice: number;
-  priceHistory: number[];
-  debtEquityRatio: number;
-  businessGrowth: number;
-  news: string[];
-  marketCap: number;
-  peRatio: number;
-  eps: number;
-  industryAvgPE: number;
-  outstandingShares: number;
-  volatility: number;
-  lastUpdate: number;
-}
-
-interface StockHolding {
-  stockId: string;
-  quantity: number;
-  averagePurchasePrice: number;
-  totalInvestment: number;
-}
-
-interface StockTransaction {
-  stockId: string;
-  stockName: string;
-  type: 'buy' | 'sell';
-  price: number;
-  quantity: number;
-  timestamp: number;
-  total: number;
-}
-
-interface PlayerPortfolio {
-  holdings: StockHolding[];
-  transactionHistory: StockTransaction[];
-}
-
-interface MarketStatus {
-  isOpen: boolean;
-  trend: 'bull' | 'bear' | 'neutral';
-  volatility: number;
-  nextOpenTime: number;
-  nextCloseTime: number;
-}
+import type {
+  Stock,
+  StockHolding,
+  StockTransaction,
+  PlayerPortfolio,
+  MarketStatus,
+} from './stockTypes.ts';
 
 interface StockMarketDashboardProps {
   onClose: () => void;

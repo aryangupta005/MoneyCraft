@@ -1,15 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import StockMarketDashboard from './StockMarketDashboard.tsx';
-
-interface Stock {
-  id: string;
-  name: string;
-  currentPrice: number;
-  priceHistory: number[];
-  debtEquityRatio: number;
-  businessGrowth: number;
-  news: string[];
-}
+import type { Stock } from './stockTypes.ts';
 
 const StockMarketUI: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);

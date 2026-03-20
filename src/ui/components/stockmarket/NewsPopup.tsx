@@ -1,14 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
-interface Stock {
-  id: string;
-  name: string;
-  currentPrice: number;
-  priceHistory: number[];
-  debtEquityRatio: number;
-  businessGrowth: number;
-  news: string[];
-}
+import type { Stock } from './stockTypes.ts';
 
 interface NewsPopupProps {
   stock: Stock;
